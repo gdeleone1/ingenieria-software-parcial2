@@ -2,6 +2,7 @@ package gt.edu.umg.ingenieria.sistemas.parcial2.factura.service;
 
 import gt.edu.umg.ingenieria.sistemas.core.parcial2.core.model.CabeceraFacturaEntity;
 import gt.edu.umg.ingenieria.sistemas.core.parcial2.core.model.DetalleFacturaEntity;
+import gt.edu.umg.ingenieria.sistemas.core.parcial2.core.model.ProductoEntity;
 import gt.edu.umg.ingenieria.sistemas.parcial2.factura.dao.CabeceraFacturaRepository;
 import gt.edu.umg.ingenieria.sistemas.parcial2.factura.dao.DetalleFacturaRepository;
 import java.util.List;
@@ -28,4 +29,11 @@ public class FacturaService {
     public List<DetalleFacturaEntity> buscarTodosDetallesFactura(Long idCabeceraFactura) {
         return this.detalleFacturaRepository.findByHeader(idCabeceraFactura);
     }
+    
+        public String createProducto (CabeceraFacturaEntity newFactura){
+       
+                   cabeceraFacturaRepository.save(newFactura);
+                    return "Cabecera creada con exito";     
+}
+    
 }
