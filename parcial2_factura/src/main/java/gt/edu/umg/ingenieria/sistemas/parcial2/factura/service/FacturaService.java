@@ -30,10 +30,20 @@ public class FacturaService {
         return this.detalleFacturaRepository.findByHeader(idCabeceraFactura);
     }
     
-        public String createProducto (CabeceraFacturaEntity newFactura){
+        public String createFactura(CabeceraFacturaEntity newFactura){
        
                    cabeceraFacturaRepository.save(newFactura);
                     return "Cabecera creada con exito";     
 }
-    
+               public String createDetalleFactura(DetalleFacturaEntity newDetalle){
+       
+                   detalleFacturaRepository.save(newDetalle);
+                    return "Detalle creado con exito";     
+}
+   
+          public CabeceraFacturaEntity getFacturaByNit (String nit){
+        return this.cabeceraFacturaRepository.findFacturaByNit(nit);
+        
+    }
+               
 }
