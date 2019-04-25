@@ -19,4 +19,6 @@ public class CabeceraFacturaController {
     public List<CabeceraFacturaEntity> buscarTodas() {
         return this.facturaService.buscarTodasCabecerasFactura();
     }
+    
+    
 }
