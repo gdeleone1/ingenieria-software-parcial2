@@ -11,9 +11,30 @@ public class ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
+       
+
     
     public List<ProductoEntity> buscarTodos() {
+      
+         
         return (List<ProductoEntity>) this.productoRepository.findAll();
+        
+        
+        
+    }
+    
+    
+    
+      //crear producto 
+    public String createProducto (ProductoEntity newProducto){
+       
+                   productoRepository.save(newProducto);
+                    return "Producto creado con exito";     
+}
+    
+        public ProductoEntity updateProducto(ProductoEntity newProducto) {
+          
+        return this.productoRepository.save(newProducto);        
     }
     
 }
